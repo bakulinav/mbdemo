@@ -82,7 +82,12 @@ import java.util.*;
 public class DoorsApiExample {
 
     public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
         
+        // Configure OAuth2 access token for authorization: oauth2
+        OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+        oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
         DoorsApi apiInstance = new DoorsApi();
         String vehicleId = "vehicleId_example"; // String | ID of vehicle to return.
         try {
@@ -99,7 +104,7 @@ public class DoorsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1*
+All URIs are relative to *https://api.mercedes-benz.com/experimental/connectedvehicle/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -137,8 +142,16 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
 Authentication schemes defined for the API:
+### oauth2
+
+- **Type**: OAuth
+- **Flow**: accessCode
+- **Authorization URL**: https://api.secure.mercedes-benz.com/oidc10/auth/oauth/v2/authorize
+- **Scopes**: 
+  - mb:user:pool:reader: Grant Read access
+  - mb:vehicle:status:general: Grant access to Connected Vehicle
+
 
 ## Recommendation
 

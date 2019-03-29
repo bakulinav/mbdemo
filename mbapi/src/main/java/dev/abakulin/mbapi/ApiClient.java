@@ -52,7 +52,6 @@ import dev.abakulin.mbapi.auth.OAuth;
 
 public class ApiClient {
 
-//    private String basePath = "https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1";
     private String basePath = "https://api.mercedes-benz.com/experimental/connectedvehicle/v1";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -90,8 +89,9 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
+        authentications.put("oauth2", new OAuth());
         // Prevent the authentications from being modified.
-//        authentications = Collections.unmodifiableMap(authentications);
+        authentications = Collections.unmodifiableMap(authentications);
     }
 
     /**
@@ -106,7 +106,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.mercedes-benz.com/experimental/connectedvehicle_tryout/v1
+     * @param basePath Base path of the URL (e.g https://api.mercedes-benz.com/experimental/connectedvehicle/v1
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
