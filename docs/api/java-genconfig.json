@@ -1,0 +1,15 @@
+{
+  "invokerPackage": "dev.abakulin.mbapi",
+  "modelPackage": "dev.abakulin.mbapi.model",
+  "apiPackage": "dev.abakulin.mbapi.api",
+  "groupId": "dev.abakulin",
+  "artifactId": "mbapi",
+  "artifactVersion": "1.0-SNAPSHOT",
+  "artifactUrl": "https://github.com/bakulinav/mbdemo",
+  "artifactDescription": "Mercedes-Benz API client",
+  "developerName": "Alexey Bakulin",
+  "developerEmail": "bakulinav@gmail.com",
+  "hideGenerationTimestamp": true,
+  "dateLibrary": "java8",
+  "java8": true
+}
