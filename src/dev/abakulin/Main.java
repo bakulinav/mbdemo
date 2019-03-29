@@ -24,9 +24,9 @@ public class Main {
         allVehicles.forEach(v -> {
             System.out.println(v);
 
-            checkApiStatus(v.getId(), mbApiClient);
+//            checkApiStatus(v.getId(), mbApiClient);
 
-//            run(v.getId(), mbApiClient);
+            run(v.getId(), mbApiClient);
         });
     }
 
