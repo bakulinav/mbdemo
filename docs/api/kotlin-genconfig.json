@@ -1,0 +1,8 @@
+{
+  "packageName": "dev.abakulin.mbapi.kotlin",
+  "groupId": "dev.abakulin",
+  "artifactId": "mbapi-kotlin",
+  "artifactVersion": "1.0-SNAPSHOT",
+  "enumPropertyNaming": "UPPERCASE",
+  "dateLibrary": "java8"
+}
