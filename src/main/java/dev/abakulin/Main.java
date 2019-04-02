@@ -17,13 +17,13 @@ public class Main {
 
         ApiClient mbApiClient = Configuration.getDefaultApiClient();
         OAuth oauth2 = (OAuth) mbApiClient.getAuthentication("oauth2");
-        oauth2.setAccessToken("4838db98-7fcf-4e2a-a552-15a0b8208ab8");
+        oauth2.setAccessToken("19e0f35c-0cfc-4ca5-8e08-c1cd7c776119");
 
         VehiclesApi vehiclesApi = new VehiclesApi(mbApiClient);
         Vehicles allVehicles = vehiclesApi.getAllVehicles();
 
 
-        VehicleStateWatcher vehicleStateWatcher = new VehicleStateWatcher(mbApiClient);
+        VehicleStateWatcher vehicleStateWatcher = new VehicleStateWatcher(mbApiClient, 20000L);
 
 
         allVehicles.forEach(v -> {
