@@ -141,7 +141,8 @@
     "/vehicles/{vehicleId}/tires": {
       "x-swagger-router-controller": "tires",
       "get": {
-        "description": "Get pressure of all tires of the vehicle.",
+        "summary": "Get pressure of all tires of the vehicle.",
+        "description": "Returns information about pressure in the vehicle's tires.",
         "operationId": "getTiresStatus",
         "tags": [
           "Tires"
@@ -227,9 +228,9 @@
         }
       },
       "post": {
-        "operationId": "postDoors",
-        "description": "Locks or unlocks all doors of the vehicle.",
         "summary": "Locks or unlocks all doors of the vehicle.",
+        "description": "Locks or unlocks all doors of the vehicle.",
+        "operationId": "postDoors",
         "tags": [
           "Doors"
         ],

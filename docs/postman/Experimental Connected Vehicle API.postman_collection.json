@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "c55502c1-c86e-40ac-9456-bdca4d140512",
+		"name": "Experimental Connected Vehicle API",
+		"description": "An experimental Connected Vehicle API that allows to request vehicle data and to send commands to the virtual car simulator.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "vehicles",
+			"item": [
+				{
+					"name": "Find all vehicles.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles"
+							]
+						},
+						"description": "List all of the user's vehicles."
+					},
+					"response": []
+				},
+				{
+					"name": "Get vehicle by ID.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Returns detailed information about the vehicle like its licensplate, sales designation or its FIN or VIN."
+					},
+					"response": []
+				},
+				{
+					"name": "Get pressure of all tires of the vehicle.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId/tires",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId",
+								"tires"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Returns information about pressure in the vehicle's tires."
+					},
+					"response": []
+				},
+				{
+					"name": "Get the status of all doors of the vehicle.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId/doors",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId",
+								"doors"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Returns status of all doors of the vehicle. It informs about each door if it is locked, unlocked, open or closed."
+					},
+					"response": []
+				},
+				{
+					"name": "Locks or unlocks all doors of the vehicle.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "JSON object containing the command to lock or unlock the doors."
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId/doors",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId",
+								"doors"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Locks or unlocks all doors of the vehicle."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves the current location of the vehicle.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId/location",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId",
+								"location"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Returns the current location and the heading of the vehicle."
+					},
+					"response": []
+				},
+				{
+					"name": "Provides information about the odometer.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId/odometer",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId",
+								"odometer"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Provides information about the odometer like milage aka odometer, distance driven since reset, distance driven since the enige start."
+					},
+					"response": []
+				},
+				{
+					"name": "Returns the current fuel level.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId/fuel",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId",
+								"fuel"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Provides information about the current fuel level."
+					},
+					"response": []
+				},
+				{
+					"name": "Provides the current status of the battery pack.",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{basePath}}/{{version}}/vehicles/:vehicleId/stateofcharge",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{basePath}}",
+								"{{version}}",
+								"vehicles",
+								":vehicleId",
+								"stateofcharge"
+							],
+							"variable": [
+								{
+									"key": "vehicleId",
+									"value": "{{vehicleId}}"
+								}
+							]
+						},
+						"description": "Provides the current status of the battery pack."
+					},
+					"response": []
+				}
+			],
+			"description": "Folder for vehicles"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "a1b2c3d4-a1b2-a1b2-a1b2-a1b2c3d4e5f6",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f2b7455c-6680-40f0-abc5-d9f83ab6e5a4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d5fbbaf3-6b19-4182-bd1e-6a7ced1d775d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
