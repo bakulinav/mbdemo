@@ -8,7 +8,7 @@ Collection can be imported to [Postman](https://www.getpostman.com) application.
 
 For using the Collection you need environment variables. You can find them if import [Mercedes-Benz.postman_environment.json](Mercedes-Benz.postman_environment.json)
 (for production API) or [Mercedes-Benz-Tryout.postman_environment.json](Mercedes-Benz-Tryout.postman_environment.json) (for demo API)
-variables file.
+variable files.
 
 All requests are secured so you need authorization. Use collection authorization for do not setup it for every request.
 Use OAuth2 method for Production API with your `clientId` and `clientSecret` variables and Demo (Tryout) API with Bearer type and with `tryoutAccessToken` variable.
