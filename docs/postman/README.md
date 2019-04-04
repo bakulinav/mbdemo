@@ -10,5 +10,5 @@ For using the Collection you need environment variables. You can find them if im
 (for production API) or [Mercedes-Benz-Tryout.postman_environment.json](Mercedes-Benz-Tryout.postman_environment.json) (for demo API)
 variables file.
 
-All requests are secured so you need authorization. Use collection authorization for not setup it for individual request.
-Use OAuth2 method for Production API and Bearer with `tryoutAccessToken` variable for Demo (Tryout) API.
+All requests are secured so you need authorization. Use collection authorization for do not setup it for every request.
+Use OAuth2 method for Production API with your `clientId` and `clientSecret` variables and Demo (Tryout) API with Bearer type and with `tryoutAccessToken` variable.
