@@ -17,7 +17,7 @@ public class Main {
 
         ApiClient mbApiClient = Configuration.getDefaultApiClient();
         OAuth oauth2 = (OAuth) mbApiClient.getAuthentication("oauth2");
-        oauth2.setAccessToken("");
+        oauth2.setAccessToken("03b5495e-ea19-481e-95ca-58f494f500ba");
 
         VehiclesApi vehiclesApi = new VehiclesApi(mbApiClient);
         Vehicles allVehicles = vehiclesApi.getAllVehicles();

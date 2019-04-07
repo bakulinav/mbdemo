@@ -1,12 +1,16 @@
 package dev.abakulin.model;
 
 import dev.abakulin.mbapi.model.*;
+import lombok.Builder;
 import lombok.Getter;
+
+import java.util.Objects;
 
 /**
  * Represents the state of vehicle in specific time
  */
 @Getter
+@Builder
 public class VehicleState {
     VehicleDetail vehicle;
     Tires tires;
@@ -45,6 +49,13 @@ public class VehicleState {
         return merged;
     }
 
+    public boolean hasUpdate(VehicleState change) {
+
+        // current fields + updated "change" fields
+
+        return !this.equals(change);
+    }
+
     private VehicleDetail mergeVehicle(VehicleDetail fromDetails, VehicleDetail toDetails) {
         return toDetails == null ? fromDetails : toDetails;
     }
@@ -71,6 +82,24 @@ public class VehicleState {
 
     private DistanceDriven mergeDistance(DistanceDriven fromDistance, DistanceDriven toDistance) {
         return toDistance == null ? fromDistance : toDistance;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        VehicleState vehicleState = (VehicleState) o;
+        return Objects.equals(this.vehicle, vehicleState.vehicle) &&
+                Objects.equals(this.tires, vehicleState.tires) &&
+                Objects.equals(this.doors, vehicleState.doors) &&
+                Objects.equals(this.fuel, vehicleState.fuel) &&
+                Objects.equals(this.location, vehicleState.location) &&
+                Objects.equals(this.charge, vehicleState.charge) &&
+                Objects.equals(this.distance, vehicleState.distance);
     }
 
     @Override

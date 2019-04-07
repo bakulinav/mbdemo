@@ -61,18 +61,6 @@ public class VehicleStateWatcher {
         loopStateCheck();
     }
 
-    VehicleState getCurrentState() {
-        return currentState;
-    }
-
-    void subscribeVehicleState(VehicleStateSubscriber subscriber) {
-        boolean added = subscribers.add(subscriber);
-    }
-
-    void unSubscribeVehicleState(VehicleStateSubscriber subscriber) {
-        boolean removed = subscribers.remove(subscriber);
-    }
-
     private void loopStateCheck() {
         // get init state
         initState();
@@ -106,7 +94,7 @@ public class VehicleStateWatcher {
                 logger.info("Check Vehicle state for changes");
                 // if state changed, notify subscribers
 
-                if (hasUpdates(change.get())) {
+                if (currentState.hasUpdate(change.get())) {
                     logger.info("Vehicle has updates");
                     Optional<VehicleState> finalChange = change;
                     subscribers.forEach(it -> it.applyUpdate(finalChange.get()));
@@ -116,12 +104,6 @@ public class VehicleStateWatcher {
                 }
             }
         }
-    }
-
-    private boolean hasUpdates(VehicleState vehicleState) {
-        VehicleStateDelta vehicleStateDelta = new VehicleStateDelta();
-
-        return vehicleStateDelta.compare(currentState, vehicleState);
     }
 
     private Optional<VehicleState> getVehicleState() throws ApiException {
